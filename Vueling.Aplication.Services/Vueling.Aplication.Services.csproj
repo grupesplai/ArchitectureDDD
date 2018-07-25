@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager\HttpClient.cs" />
+    <Compile Include="Services\HttpClientServices.cs" />
+    <Compile Include="Services\HttpPolicyServices.cs" />
+    <Compile Include="StartManager\WebClientStart.cs" />
+    <Compile Include="StartManager\WebPolicyStart.cs" />
     <Compile Include="Variables\GlobalVariable.cs" />
     <Compile Include="Services\PoliciesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

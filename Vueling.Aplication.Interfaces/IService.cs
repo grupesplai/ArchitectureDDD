@@ -8,7 +8,7 @@ namespace Vueling.Aplication.Interfaces
 {
     public interface IService<T>
     {
-        void Add(T model);
+        T Add(T model);
         List<T> GetAll();
     }
 }

@@ -15,16 +15,23 @@ namespace VuelingAPI.Controllers
     {
         public readonly IService<Policies> iService = new PoliciesService();
         public PoliciesController() : this(new PoliciesService()) { }
-        public PoliciesController(PoliciesService service)
+        public PoliciesController(PoliciesService policyService)
         {
-            iService = service;
+            iService = policyService;
         }
 
         // GET: api/policies
         public IEnumerable<Policies> Get()
         {
-            Loggin.LogTrace(Resource0.INFO);
-            return iService.GetAll();
+            try
+            {
+                Loggin.LogTrace(Resource0.INFO);
+                return iService.GetAll();
+            }
+            catch (VuelingException)
+            {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
         }
 
         // POST: api/policies
@@ -35,18 +42,17 @@ namespace VuelingAPI.Controllers
                 Loggin.LogError(Resource0.BADREQ);
                 return BadRequest(ModelState);
             }
+            Policies policyRetruned = null;
             try
             {
-                //Loggin.LogTrace(Resource0.ADDCLI);
-                iService.Add(policy);
+                Loggin.LogTrace(Resource0.ADDCLI);
+                policyRetruned = iService.Add(policy);
             }
-            catch (VuelingException ex)
+            catch (VuelingException)
             {
-                Loggin.LogError(ex.Message);
-
-                throw;
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
-            return CreatedAtRoute("DefaultApi", new { policy.id }, policy);
+            return CreatedAtRoute("DefaultApi", new { policy.id }, policyRetruned);
         }
     }
 }

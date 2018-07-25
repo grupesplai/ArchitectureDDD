@@ -10,14 +10,33 @@ namespace Vueling.Infrastructure.Repository
 {
     public class PoliciesRepository : IRepository<Policies>
     {
+        private FileManager fileManager;
+        public PoliciesRepository()
+        {
+
+            fileManager = new FileManager("Policies.json");
+            fileManager.CreateFile();
+        }
         public Policies Add(Policies model)
         {
-            throw new NotImplementedException();
+            List<Policies> jsonList;
+
+            var jsondata = fileManager.RetrieveData();
+            jsonList = JsonConvert.DeserializeObject<List<Policies>>(jsondata);
+            if (jsonList == null)
+            {
+                jsonList = new List<Policies>();
+            }
+            jsonList.Add(model);
+            Policies objectFound = jsonList.Find(x => x.Equals(model));
+
+            return objectFound;
         }
 
-        public void GetAll(List<Policies> list)
+        public List<Policies> GetAll()
         {
-            GetJson(list);
+            var jsondata = fileManager.RetrieveData();
+            return JsonConvert.DeserializeObject<List<Policies>>(jsondata);
         }
 
         public static void GetJson(List<Policies> list)

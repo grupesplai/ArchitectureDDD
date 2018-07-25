@@ -9,6 +9,6 @@ namespace Vueling.Infrastructure.Interfaces
     public interface IRepository<T>
     {
         T Add(T model);
-        void GetAll(List<T> list);
+        List<T> GetAll();
     }
 }

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSet.cs" />
+    <Compile Include="FileManager.cs" />
     <Compile Include="JsonConverter.cs" />
     <Compile Include="Loggin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

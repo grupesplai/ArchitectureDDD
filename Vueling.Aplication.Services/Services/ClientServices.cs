@@ -21,61 +21,22 @@ namespace Vueling.Aplication.Services
     {
         private readonly IRepository<Clients> iRepository;
 
-        public async void Add(Clients client)
+        public ClientServices() : this(new ClientRepository())
+        { }
+
+        public ClientServices(ClientRepository clientRepository)
         {
-            var alumnoJSON = JsonConvert.SerializeObject(client, Formatting.Indented);
+            this.iRepository = clientRepository;
+        }
 
-            var encodingToBytes = Encoding.UTF8.GetBytes(alumnoJSON);
-            var byteContent = new ByteArrayContent(encodingToBytes);
-
-            byteContent.Headers.ContentType = new MediaTypeHeaderValue(
-                ConfigurationManager.AppSettings[Resource1.APIJSON]);
-
-            var result = await GlobalVariable.client.PostAsync(
-                ConfigurationManager.AppSettings[Resource1.URICLI], byteContent);
+        public Clients Add(Clients client)
+        {
+            return iRepository.Add(client);
         }
 
         public List<Clients> GetAll()
        {
-            List<Clients> lastList = null;
-            HttpResponseMessage response = Manager.HttpClient.GetDataWeb(Resource1.URICLI);
-
-            if (response.IsSuccessStatusCode)
-                lastList = GetAllList(response);
-
-            return lastList;
-        }
-
-        public List<Clients> GetAllList(HttpResponseMessage response)
-        {
-            List<Clients> lastList = null;
-            DataSet dt = Manager.HttpClient.ToReadString(response).Result;
-            try
-            {
-                lastList = dt.Tables[Resource1.CLIENTS].AsEnumerable()
-                            .Skip(1)
-                            .Select(dr =>
-                                    new Clients
-                                    {
-                                        id = dr.Field<string>(Resource1.ID),
-                                        name = dr.Field<string>(Resource1.NAME),
-                                        email = dr.Field<string>(Resource1.EMAIL),
-                                        role = dr.Field<string>(Resource1.ROLE)
-                                    }
-                                    ).ToList();
-            }
-            catch (ArgumentNullException ex)
-            {
-                Loggin.LogError(ex.Message);
-                throw new VuelingException(Resource1.E_ARG, ex.InnerException);
-            }
-            catch (AggregateException ex)
-            {
-                Loggin.LogError(ex.Message);
-                throw new VuelingException(Resource1.E_AGRE, ex.InnerException);
-            }
-            ClientRepository.GetJson(lastList);
-            return lastList;
+            return iRepository.GetAll();
         }
     }
 }
