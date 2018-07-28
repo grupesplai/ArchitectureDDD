@@ -38,5 +38,29 @@ namespace Vueling.Aplication.Services
        {
             return iRepository.GetAll();
         }
+
+        public Clients GetByID(string id)
+        {
+            try
+            {
+                return iRepository.GetByID(id);
+            }
+            catch (VuelingException ex)
+            {
+                throw new VuelingException("error en la capa api ", ex);
+            }
+        }
+
+        public bool Remove(string id)
+        {
+            try
+            {
+                return iRepository.Remove(id);
+            }
+            catch (VuelingException ex)
+            {
+                throw new VuelingException("Eror en rove de la capa de servicios", ex);
+            }
+        }
     }
 }

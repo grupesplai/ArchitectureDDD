@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
 using Vueling.Aplication.Interfaces;
@@ -17,6 +18,8 @@ namespace VuelingAPI.Controllers
         {
             iService = ClientService;
         }
+
+
 
         // GET: api/Client
         public IEnumerable<Clients> Get()
@@ -53,6 +56,41 @@ namespace VuelingAPI.Controllers
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
             return CreatedAtRoute("DefaultApi", new { client.id }, clientReturned);
+        }
+
+        // GET: api/Clients/5
+        public IHttpActionResult Get(string id)
+        {
+            try
+            {
+                Clients client = iService.GetByID(id);
+                return Ok(client);
+            }
+            catch (VuelingException)
+            {
+                return NotFound();
+            }
+        }
+
+
+        // DELETE: api/Clients/5
+        public IHttpActionResult Delete(string id)
+        {
+            Clients client;
+            try
+            {
+                client = iService.GetByID(id);
+                iService.Remove(client.id);
+                return Ok(client);
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
+            catch (VuelingException)
+            {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
         }
     }
 }

@@ -39,7 +39,49 @@ namespace Vueling.Infrastructure.Repository
             return JsonConvert.DeserializeObject<List<Policies>>(jsondata);
         }
 
-        public static void GetJson(List<Policies> list)
+
+        public Policies GetByID(string id)
+        {
+            try
+            {
+                var jsondata = fileManager.RetrieveData();
+                List<Policies> policyList = JsonConvert.DeserializeObject<List<Policies>>(jsondata);
+                Policies policyObj = policyList.Find(x => x.id == id);
+                return policyObj;
+            }
+            catch (VuelingException ex)
+            {
+                throw new VuelingException("Error al desarilizar", ex);
+            }
+        }
+
+        public bool Remove(string id)
+        {
+            List<Policies> jsonList;
+            try
+            {
+                var jsondata = fileManager.RetrieveData();
+                jsonList = JsonConvert.DeserializeObject<List<Policies>>(jsondata);
+                if (jsonList == null)
+                {
+                    jsonList = new List<Policies>();
+                }
+                Policies policy = jsonList.Find(x => x.id == id);
+                jsonList.Remove(policy);
+
+                var resultJSONList = JsonConvert.SerializeObject(jsonList, Formatting.Indented);
+                fileManager.WriteToFile(resultJSONList);
+                return true;
+            }
+            catch (VuelingException ex)
+            {
+                throw new VuelingException("error en la capa repository", ex);
+            }
+        }
+
+
+
+            public static void GetJson(List<Policies> list)
         {
 
             string path = AppSet.AppTxts(Resource2.PATHP);
@@ -71,5 +113,7 @@ namespace Vueling.Infrastructure.Repository
             catch (Exception e) { throw e; }
             return alumnos;
         }
+
+        
     }
 }

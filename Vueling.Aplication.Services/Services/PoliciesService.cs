@@ -1,12 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
 using Vueling.Aplication.Interfaces;
 using Vueling.Common.Entity;
 using Vueling.Common.Layer;
@@ -26,6 +20,9 @@ namespace Vueling.Aplication.Services
             this.iRepository = policyRepository;
         }
 
+
+
+
         public Policies Add(Policies policy)
         {
             return iRepository.Add(policy);
@@ -36,6 +33,28 @@ namespace Vueling.Aplication.Services
             return iRepository.GetAll(); ;
         }
 
-        
+        public Policies GetByID(string id)
+        {
+            try
+            {
+                return iRepository.GetByID(id);
+            }
+            catch (VuelingException ex)
+            {
+                throw new VuelingException("error en la capa servicio ", ex);
+            }
+        }
+
+        public bool Remove(string id)
+        {
+            try
+            {
+                return iRepository.Remove(id);
+            }
+            catch (VuelingException ex)
+            {
+                throw new VuelingException("Eror en rove de la capa de servicios", ex);
+            }
+        }
     }
 }

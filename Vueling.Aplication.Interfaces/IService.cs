@@ -10,5 +10,7 @@ namespace Vueling.Aplication.Interfaces
     {
         T Add(T model);
         List<T> GetAll();
+        T GetByID(string id);
+        bool Remove(string id);
     }
 }

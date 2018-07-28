@@ -54,5 +54,40 @@ namespace VuelingAPI.Controllers
             }
             return CreatedAtRoute("DefaultApi", new { policy.id }, policyRetruned);
         }
+
+        // GET: api/Clients/5
+        public IHttpActionResult Get(string id)
+        {
+            try
+            {
+                Policies client = iService.GetByID(id);
+                return Ok(client);
+            }
+            catch (VuelingException)
+            {
+                return NotFound();
+            }
+        }
+
+
+        // DELETE: api/Policies/5
+        public IHttpActionResult Delete(string id)
+        {
+            Policies policy;
+            try
+            {
+                policy = iService.GetByID(id);
+                iService.Remove(policy.id);
+                return Ok(policy);
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
+            catch (VuelingException)
+            {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+        }
     }
 }

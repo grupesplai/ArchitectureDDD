@@ -1,35 +1,33 @@
 ﻿using log4net;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Resources;
+using Autofac;
 
 namespace Vueling.Common.Layer
 {
     public class Loggin
     {
-        private static ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private static IContainer Container { get; set; }
 
-        public Loggin()
+        private readonly ILog _logger;
+        public Loggin(ILog logger)
         {
+            _logger = logger;
         }
 
-        public static void LogDebug(String message)
+        public void LogDebug(String message)
         {
-            log.Debug(Resource3.DEBUG+ message);
+            _logger.Debug(Resource3.DEBUG+ message);
         }
 
-        public static void LogError(String message)
+        public void LogError(String message)
         {
-            log.Error(Resource3.ERROR + message);
+            _logger.Error(Resource3.ERROR + message);
         }
 
-        public static void LogTrace(String message)
+        public void LogTrace(String message)
         {
-            log.Info(Resource3.TRACE+ message);
+            _logger.Info(Resource3.TRACE+ message);
         }
 
     }

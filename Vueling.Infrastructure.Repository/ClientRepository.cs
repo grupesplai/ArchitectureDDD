@@ -41,6 +41,46 @@ namespace Vueling.Infrastructure.Repository
             return JsonConvert.DeserializeObject<List<Clients>>(jsondata);
         }
 
+        public Clients GetByID(string id)
+        {
+            try
+            {
+                var jsondata = fileManager.RetrieveData();
+                List<Clients> clientList = JsonConvert.DeserializeObject<List<Clients>>(jsondata);
+                Clients clientObj = clientList.Find(x => x.id == id);
+                return clientObj;
+            }
+            catch (VuelingException ex)
+            {
+                throw new VuelingException("Error al desarilizar", ex);
+            }
+        }
+
+        public bool Remove(string id)
+        {
+            List<Clients> jsonList;
+            try
+            {
+                var jsondata = fileManager.RetrieveData();
+                jsonList = JsonConvert.DeserializeObject<List<Clients>>(jsondata);
+                if (jsonList == null)
+                {
+                    jsonList = new List<Clients>();
+                }
+                Clients client = jsonList.Find(x => x.id == id);
+                jsonList.Remove(client);
+
+                var resultJSONList = JsonConvert.SerializeObject(jsonList, Formatting.Indented);
+                fileManager.WriteToFile(resultJSONList);
+                return true;
+            }
+            catch (VuelingException ex)
+            {
+                throw new VuelingException("error en la capa repository", ex);
+            }
+        }
+
+
 
 
 
