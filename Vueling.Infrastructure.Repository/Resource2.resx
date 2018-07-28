@@ -117,10 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CLIENTS" xml:space="preserve">
+    <value>clients</value>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>email</value>
+  </data>
+  <data name="E_AGRE" xml:space="preserve">
+    <value>Error caused by trying AggregateException</value>
+  </data>
+  <data name="E_ARG" xml:space="preserve">
+    <value>Error caused by trying ArgumentNullException</value>
+  </data>
+  <data name="E_HTTP" xml:space="preserve">
+    <value>Error caused by trying HttpRequestException</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="NAME" xml:space="preserve">
+    <value>name</value>
+  </data>
   <data name="PATHC" xml:space="preserve">
     <value>pathC</value>
   </data>
   <data name="PATHP" xml:space="preserve">
     <value>pathP</value>
+  </data>
+  <data name="ROLE" xml:space="preserve">
+    <value>role</value>
   </data>
 </root>

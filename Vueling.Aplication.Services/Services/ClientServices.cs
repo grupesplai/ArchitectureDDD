@@ -34,10 +34,17 @@ namespace Vueling.Aplication.Services
             return iRepository.Add(client);
         }
 
+
+
+
+
         public List<Clients> GetAll()
        {
             return iRepository.GetAll();
         }
+
+
+
 
         public Clients GetByID(string id)
         {

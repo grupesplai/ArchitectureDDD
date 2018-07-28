@@ -88,29 +88,11 @@ namespace Vueling.Aplication.Services {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a clients.
-        /// </summary>
-        internal static string CLIENTS {
-            get {
-                return ResourceManager.GetString("CLIENTS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a inceptionDate.
         /// </summary>
         internal static string DATE {
             get {
                 return ResourceManager.GetString("DATE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Error caused by trying AggregateException.
-        /// </summary>
-        internal static string E_AGRE {
-            get {
-                return ResourceManager.GetString("E_AGRE", resourceCulture);
             }
         }
         
@@ -133,33 +115,6 @@ namespace Vueling.Aplication.Services {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a email.
-        /// </summary>
-        internal static string EMAIL {
-            get {
-                return ResourceManager.GetString("EMAIL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a id.
-        /// </summary>
-        internal static string ID {
-            get {
-                return ResourceManager.GetString("ID", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a name.
-        /// </summary>
-        internal static string NAME {
-            get {
-                return ResourceManager.GetString("NAME", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a installmentPayment.
         /// </summary>
         internal static string PAY {
@@ -174,15 +129,6 @@ namespace Vueling.Aplication.Services {
         internal static string POLICY {
             get {
                 return ResourceManager.GetString("POLICY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a role.
-        /// </summary>
-        internal static string ROLE {
-            get {
-                return ResourceManager.GetString("ROLE", resourceCulture);
             }
         }
         

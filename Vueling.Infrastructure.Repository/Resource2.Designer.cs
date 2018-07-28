@@ -61,6 +61,69 @@ namespace Vueling.Infrastructure.Repository {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a clients.
+        /// </summary>
+        internal static string CLIENTS {
+            get {
+                return ResourceManager.GetString("CLIENTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error caused by trying AggregateException.
+        /// </summary>
+        internal static string E_AGRE {
+            get {
+                return ResourceManager.GetString("E_AGRE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error caused by trying ArgumentNullException.
+        /// </summary>
+        internal static string E_ARG {
+            get {
+                return ResourceManager.GetString("E_ARG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error caused by trying HttpRequestException.
+        /// </summary>
+        internal static string E_HTTP {
+            get {
+                return ResourceManager.GetString("E_HTTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a email.
+        /// </summary>
+        internal static string EMAIL {
+            get {
+                return ResourceManager.GetString("EMAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a id.
+        /// </summary>
+        internal static string ID {
+            get {
+                return ResourceManager.GetString("ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a name.
+        /// </summary>
+        internal static string NAME {
+            get {
+                return ResourceManager.GetString("NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a pathC.
         /// </summary>
         internal static string PATHC {
@@ -75,6 +138,15 @@ namespace Vueling.Infrastructure.Repository {
         internal static string PATHP {
             get {
                 return ResourceManager.GetString("PATHP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a role.
+        /// </summary>
+        internal static string ROLE {
+            get {
+                return ResourceManager.GetString("ROLE", resourceCulture);
             }
         }
     }

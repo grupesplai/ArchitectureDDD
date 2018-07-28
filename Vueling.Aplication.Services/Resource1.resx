@@ -126,17 +126,8 @@
   <data name="CLIENTID" xml:space="preserve">
     <value>clientId</value>
   </data>
-  <data name="CLIENTS" xml:space="preserve">
-    <value>clients</value>
-  </data>
   <data name="DATE" xml:space="preserve">
     <value>inceptionDate</value>
-  </data>
-  <data name="EMAIL" xml:space="preserve">
-    <value>email</value>
-  </data>
-  <data name="E_AGRE" xml:space="preserve">
-    <value>Error caused by trying AggregateException</value>
   </data>
   <data name="E_ARG" xml:space="preserve">
     <value>Error caused by trying ArgumentNullException</value>
@@ -144,20 +135,11 @@
   <data name="E_HTTP" xml:space="preserve">
     <value>Error caused by trying HttpRequestException</value>
   </data>
-  <data name="ID" xml:space="preserve">
-    <value>id</value>
-  </data>
-  <data name="NAME" xml:space="preserve">
-    <value>name</value>
-  </data>
   <data name="PAY" xml:space="preserve">
     <value>installmentPayment</value>
   </data>
   <data name="POLICY" xml:space="preserve">
     <value>policies</value>
-  </data>
-  <data name="ROLE" xml:space="preserve">
-    <value>role</value>
   </data>
   <data name="URICLI" xml:space="preserve">
     <value>uricl</value>

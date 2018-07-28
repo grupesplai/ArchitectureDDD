@@ -115,6 +115,15 @@ namespace Vueling.Common.Layer {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a pathC.
+        /// </summary>
+        internal static string PATHC {
+            get {
+                return ResourceManager.GetString("PATHC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Information:.
         /// </summary>
         internal static string TRACE {

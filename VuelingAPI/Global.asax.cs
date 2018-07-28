@@ -6,7 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Vueling.Aplication.Services.StartManager;
+using Vueling.Aplication.Services.Services;
 
 namespace VuelingAPI
 {
@@ -19,8 +19,8 @@ namespace VuelingAPI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            WebClientStart.StartMethod();
-            WebPolicyStart.StartMethod();
+
+            HttpClientServices.GetJsonFromWeb();
         }
     }
 }

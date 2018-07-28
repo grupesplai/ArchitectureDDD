@@ -51,10 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSet.cs" />
-    <Compile Include="FileManager.cs" />
-    <Compile Include="JsonConverter.cs" />
+    <Compile Include="JsonUtilities.cs" />
     <Compile Include="Loggin.cs" />
     <Compile Include="LoggingModule.cs" />
+    <Compile Include="PathManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource3.Designer.cs">
       <AutoGen>True</AutoGen>

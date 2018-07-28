@@ -26,7 +26,6 @@ namespace VuelingAPI.Controllers
         {
             try
             {
-                Loggin.LogTrace(Resource0.INFO);
                 return iService.GetAll();
             }
             catch (VuelingException)
@@ -40,19 +39,18 @@ namespace VuelingAPI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                Loggin.LogError(Resource0.BADREQ);
+                //Loggin.LogError(Resource0.BADREQ);
                 return BadRequest(ModelState);
             }
             Clients clientReturned = null; 
             try
             {
-                Loggin.LogTrace(Resource0.ADDCLI);
+                //Loggin.LogTrace(Resource0.ADDCLI);
                 clientReturned = iService.Add(client);
             }
-            catch (VuelingException ex)
+            catch (VuelingException)
             {
-                Loggin.LogError(ex.Message);
-
+                //Loggin.LogError(ex.Message);/
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
             return CreatedAtRoute("DefaultApi", new { client.id }, clientReturned);

@@ -135,6 +135,9 @@
   <data name="E_JSON" xml:space="preserve">
     <value>Error caused by trying Json Exception</value>
   </data>
+  <data name="PATHC" xml:space="preserve">
+    <value>pathC</value>
+  </data>
   <data name="TRACE" xml:space="preserve">
     <value>Information:</value>
   </data>

@@ -6,6 +6,12 @@
     "role": "admin"
   },
   {
+    "id": "a3b8d425-2b60-4ad7-becc-bedf2ef860bd",
+    "name": "Barnett",
+    "email": "barnettblankenship@quotezart.com",
+    "role": "user"
+  },
+  {
     "id": "44e44268-dce8-4902-b662-1b34d2c10b8e",
     "name": "Merrill",
     "email": "merrillblankenship@quotezart.com",

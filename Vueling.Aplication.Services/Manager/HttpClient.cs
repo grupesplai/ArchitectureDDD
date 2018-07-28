@@ -18,25 +18,19 @@ namespace Vueling.Aplication.Services.Manager
             }
             catch(HttpRequestException ex)
             {
-                Loggin.LogError(ex.Message);
-                Loggin.LogError(ex.StackTrace);
+                //Loggin.LogError(ex.Message);
+                //Loggin.LogError(ex.StackTrace);
                 throw new VuelingException(Resource1.E_HTTP, ex.InnerException);
             }
             catch (ArgumentNullException ex)
             {
-                Loggin.LogError(ex.Message);
-                Loggin.LogError(ex.StackTrace);
+                //Loggin.LogError(ex.Message);
+                //Loggin.LogError(ex.StackTrace);
                 throw new VuelingException(Resource1.E_ARG, ex.InnerException);
             }
             return response;
         }
 
-        public static async Task<DataSet> ToReadString(HttpResponseMessage response)
-        {
-            var jsonString = await response.Content.ReadAsStringAsync();
-            DataSet listJson = JsonUtilities.Desearializer(jsonString);
-
-            return listJson;
-        }
+        
     }
 }
