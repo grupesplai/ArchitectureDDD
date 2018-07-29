@@ -8,7 +8,7 @@ namespace Vueling.Aplication.Services.Manager
 {
     public class HttpClient 
     {
-        public static HttpResponseMessage GetDataWeb(string uri )
+        public static HttpResponseMessage GetDataWeb(string uri)
         {
             HttpResponseMessage response = null;
             try

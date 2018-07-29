@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="AppSet.cs" />
     <Compile Include="JsonUtilities.cs" />
+    <Compile Include="Log4net\ILogger.cs" />
+    <Compile Include="Log4net\Log4netAdapter.cs" />
     <Compile Include="Loggin.cs" />
     <Compile Include="LoggingModule.cs" />
     <Compile Include="PathManager.cs" />
@@ -64,7 +66,6 @@
     <Compile Include="VuelingException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="log4net.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -6,17 +6,22 @@ using Vueling.Aplication.Interfaces;
 using Vueling.Aplication.Services;
 using Vueling.Common.Entity;
 using Vueling.Common.Layer;
+using Vueling.Common.Layer.Log4net;
 
 namespace VuelingAPI.Controllers
 {
     public class ClientController : ApiController
     {
-        public readonly IService<Clients> iService = new ClientServices();
-        public ClientController() : 
-            this(new ClientServices()) { }
-        public ClientController(ClientServices ClientService)
+        private readonly ILogger Log;
+        public readonly IService<Clients> iService;
+
+        public ClientController() :
+            this(new ClientServices())
+        { }
+        public ClientController(/*ILogger Log,*/ ClientServices clientService)
         {
-            iService = ClientService;
+            //this.Log = Log;
+            iService = clientService;
         }
 
 

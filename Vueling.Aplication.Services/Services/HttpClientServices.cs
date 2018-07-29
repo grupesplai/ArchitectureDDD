@@ -23,7 +23,6 @@ namespace Vueling.Aplication.Services.Services
         public static void GetJsonFromWeb()//Metodo inicial que tiene que desearlizar la web
         {
             HttpResponseMessage response = Manager.HttpClient.GetDataWeb(Resource1.URICLI);
-
             if (response.IsSuccessStatusCode)
                 ListCatcher.GetAllList(response);
         }

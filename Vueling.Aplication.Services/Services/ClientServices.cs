@@ -14,18 +14,23 @@ using Vueling.Infrastructure.Interfaces;
 using Vueling.Infrastructure.Repository;
 using System;
 using System.Linq;
+using Vueling.Common.Layer.Log4net;
 
 namespace Vueling.Aplication.Services
 {
     public class ClientServices : IService<Clients>
     {
+        private readonly ILogger log;
         private readonly IRepository<Clients> iRepository;
+
 
         public ClientServices() : this(new ClientRepository())
         { }
 
-        public ClientServices(ClientRepository clientRepository)
+
+        public ClientServices(/*ILogger log,*/ ClientRepository clientRepository)
         {
+            //this.log = log;
             this.iRepository = clientRepository;
         }
 
@@ -33,18 +38,11 @@ namespace Vueling.Aplication.Services
         {
             return iRepository.Add(client);
         }
-
-
-
-
-
+        
         public List<Clients> GetAll()
        {
             return iRepository.GetAll();
         }
-
-
-
 
         public Clients GetByID(string id)
         {

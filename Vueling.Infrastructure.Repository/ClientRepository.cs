@@ -3,20 +3,26 @@ using Vueling.Infrastructure.Interfaces;
 using Vueling.Common.Layer;
 using System.Collections.Generic;
 using Vueling.Common.Entity;
-
 using System.IO;
+using Vueling.Common.Layer.Log4net;
 
 namespace Vueling.Infrastructure.Repository
 {
     public class ClientRepository : IRepository<Clients>
     {
+        //private readonly ILogger log;
         private PathManager pathManager;
+
         public ClientRepository()
         {
-
             pathManager = new PathManager("Clients.json");
             pathManager.CreateFile();
         }
+        //public ClientRepository(ILogger log)
+        //{
+        //    this.log = log;
+        //}
+
         public static void MakeJsonFile(List<Clients> list)
         {
             string path = AppSet.AppTxts("pathC");
@@ -28,6 +34,11 @@ namespace Vueling.Infrastructure.Repository
               }
         }
 
+        /// <summary>
+        /// Adds the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         public Clients Add(Clients model)
         {
             List<Clients> jsonList;
@@ -88,11 +99,5 @@ namespace Vueling.Infrastructure.Repository
                 throw new VuelingException("error en la capa repository", ex);
             }
         }
-
-
-
-
-
-        
     }
 }

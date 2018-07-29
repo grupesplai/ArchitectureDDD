@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Vueling.Aplication.Services.Services;
+using VuelingAPI.App_Start;
 
 namespace VuelingAPI
 {
@@ -14,6 +15,9 @@ namespace VuelingAPI
     {
         protected void Application_Start()
         {
+            log4net.Config.XmlConfigurator.Configure();
+            AutofacConfigure.Configure();
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
