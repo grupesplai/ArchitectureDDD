@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vueling.Common.Layer", "Vue
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vueling.Common.Entity", "Vueling.Common.Entity\Vueling.Common.Entity.csproj", "{FE0CF8BA-ADC8-48FE-9873-369B927F26A5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Testing", "4.Testing", "{A1416345-988E-4540-B1D1-895026253798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VuelingAPITests", "VuelingAPITests\VuelingAPITests.csproj", "{899B0A8C-CBD3-418C-9A22-828039AD1E36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,10 @@ Global
 		{FE0CF8BA-ADC8-48FE-9873-369B927F26A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE0CF8BA-ADC8-48FE-9873-369B927F26A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE0CF8BA-ADC8-48FE-9873-369B927F26A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899B0A8C-CBD3-418C-9A22-828039AD1E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899B0A8C-CBD3-418C-9A22-828039AD1E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899B0A8C-CBD3-418C-9A22-828039AD1E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899B0A8C-CBD3-418C-9A22-828039AD1E36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +79,7 @@ Global
 		{9BF87201-83AA-4D0A-93CC-FEF4B47F38F3} = {515E4DF7-6104-4E4C-8DF1-B1CA37364BE3}
 		{2A1669C4-8F3A-45F6-8745-B0B942CCCF04} = {D3390999-5468-49BF-851D-C37535BAF4BF}
 		{FE0CF8BA-ADC8-48FE-9873-369B927F26A5} = {D3390999-5468-49BF-851D-C37535BAF4BF}
+		{899B0A8C-CBD3-418C-9A22-828039AD1E36} = {A1416345-988E-4540-B1D1-895026253798}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4B94CFA-D518-4C37-AD2F-6FA08957769E}

@@ -14,17 +14,17 @@ namespace Vueling.Aplication.Services.Services
 {
     public class HttpClientServices
     {
-        static WebClient client;
-        static HttpClientServices()
-        {
-            client = new WebClient();
-        }
+            static WebClient client;
+            static HttpClientServices()
+            {
+                client = new WebClient();
+            }
 
-        public static void GetJsonFromWeb()//Metodo inicial que tiene que desearlizar la web
-        {
-            HttpResponseMessage response = Manager.HttpClient.GetDataWeb(Resource1.URICLI);
-            if (response.IsSuccessStatusCode)
-                ListCatcher.GetAllList(response);
-        }
+            public static void GetJsonFromWeb()//Metodo inicial que tiene que desearlizar la web
+            {
+                HttpResponseMessage response = Manager.HttpClient.GetDataWeb(Resource1.URICLI);
+                if (response.IsSuccessStatusCode)
+                    ListCatcher.GetAllList(response);
+            }
     }
 }

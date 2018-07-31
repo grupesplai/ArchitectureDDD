@@ -19,6 +19,7 @@ namespace VuelingAPI.Controllers
             this(new ClientServices())
         { }
         public ClientController(/*ILogger Log,*/ ClientServices clientService)
+
         {
             //this.Log = Log;
             iService = clientService;
@@ -44,13 +45,13 @@ namespace VuelingAPI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                //Loggin.LogError(Resource0.BADREQ);
+                Log.Debug(Resource0.BADREQ);
                 return BadRequest(ModelState);
             }
             Clients clientReturned = null; 
             try
             {
-                //Loggin.LogTrace(Resource0.ADDCLI);
+                Log.Error(Resource0.ADDCLI);
                 clientReturned = iService.Add(client);
             }
             catch (VuelingException)

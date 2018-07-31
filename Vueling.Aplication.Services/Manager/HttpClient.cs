@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Data;
 using System.Net.Http;
-using System.Threading.Tasks;
 using Vueling.Common.Layer;
 
 namespace Vueling.Aplication.Services.Manager

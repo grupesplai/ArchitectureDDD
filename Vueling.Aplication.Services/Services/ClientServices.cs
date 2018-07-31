@@ -20,19 +20,19 @@ namespace Vueling.Aplication.Services
 {
     public class ClientServices : IService<Clients>
     {
-        private readonly ILogger log;
-        private readonly IRepository<Clients> iRepository;
+            private readonly ILogger log;
+            private readonly IRepository<Clients> iRepository;
 
 
-        public ClientServices() : this(new ClientRepository())
-        { }
+            public ClientServices() : this(new ClientRepository())
+            { }
 
 
-        public ClientServices(/*ILogger log,*/ ClientRepository clientRepository)
-        {
-            //this.log = log;
-            this.iRepository = clientRepository;
-        }
+            public ClientServices(/*ILogger log,*/ ClientRepository clientRepository)
+            {
+                //this.log = log;
+                this.iRepository = clientRepository;
+            }
 
         public Clients Add(Clients client)
         {
